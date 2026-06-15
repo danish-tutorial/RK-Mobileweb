@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RK Mobile – Best mobile deals on iPhones, Samsung, Redmi, Vivo, Realme & OnePlus. Trusted mobile shop in Paratwada with best prices and quality service." />
+  <title>RK Mobile | Best Mobile Deals 🔥</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            rk: {
+              yellow: '#FACC15',
+              'yellow-dark': '#EAB308',
+              'yellow-light': '#FEF9C3',
+              black: '#0A0A0A',
+              'black-light': '#111111',
+              'gray-dark': '#1A1A1A',
+              'gray-mid': '#2A2A2A',
+              'gray-light': '#3A3A3A',
+            },
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.7s ease forwards',
+            'fade-in': 'fadeIn 0.6s ease forwards',
+            'pulse-slow': 'pulse 3s infinite',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #FACC15; border-radius: 10px; }
+
+    /* Hero gradient background */
+    .hero-bg {
+      background: radial-gradient(ellipse at top left, #1a1200 0%, #0A0A0A 50%, #0d0d0d 100%),
+                  linear-gradient(135deg, #0A0A0A 0%, #1a1200 100%);
+    }
+
+    /* Glowing yellow border */
+    .glow-yellow {
+      box-shadow: 0 0 15px rgba(250, 204, 21, 0.4), 0 0 30px rgba(250, 204, 21, 0.1);
+    }
+
+    /* Card hover effect */
+    .product-card {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(250, 204, 21, 0.25);
+    }
+
+    /* Animate on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Yellow underline hover for nav */
+    .nav-link::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #FACC15;
+      transition: width 0.3s ease;
+      border-radius: 99px;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(90deg, #FACC15, #FEF08A, #EAB308);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* WhatsApp floating button pulse */
+    .whatsapp-btn::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.3);
+      animation: waPulse 2s infinite;
+    }
+    @keyframes waPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0; }
+    }
+
+    /* Mobile menu slide */
+    #mobile-menu {
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    /* Input focus glow */
+    .form-input:focus {
+      outline: none;
+      border-color: #FACC15;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2);
+    }
+
+    /* Section headings underline */
+    .section-heading::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #FACC15, #EAB308);
+      border-radius: 99px;
+      margin: 12px auto 0;
+    }
+
+    /* Hero phone image glow */
+    .hero-phone {
+      filter: drop-shadow(0 0 30px rgba(250, 204, 21, 0.35));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* About feature card */
+    .feature-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(250, 204, 21, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-rk-black text-white font-poppins antialiased">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-rk-black/90 backdrop-blur-md border-b border-rk-gray-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <a href="#home" id="nav-logo" class="flex items-center gap-2">
+          <div class="w-9 h-9 bg-rk-yellow rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H7V6h10v10z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold gradient-text">RK Mobile</span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" id="nav-home" class="nav-link text-gray-300 hover:text-rk-yellow font-medium transition-colors duration-200">Home</a>
+          <a href="#products" id="nav-products" class="nav-link text-gray-300 hover:text-rk-yellow font-medium transition-colors duration-200">Products</a>
+          <a href="#about" id="nav-about" class="nav-link text-gray-300 hover:text-rk-yellow font-medium transition-colors duration-200">About</a>
+          <a href="#contact" id="nav-contact" class="nav-link text-gray-300 hover:text-rk-yellow font-medium transition-colors duration-200">Contact</a>
+          <a href="tel:7057521030" id="nav-call-btn" class="bg-rk-yellow text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-rk-yellow-dark transition-all duration-200 glow-yellow">
+            📞 Call Us
+          </a>
+        </div>
+
+        <!-- Hamburger button -->
+        <button id="menu-toggle" aria-label="Toggle mobile menu" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-rk-yellow hover:bg-rk-gray-dark transition-all duration-200">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-rk-black-light border-t border-rk-gray-dark">
+      <div class="flex flex-col px-4 py-3 gap-1">
+        <a href="#home" id="mob-home" class="mobile-nav-link py-3 px-4 rounded-lg text-gray-300 hover:text-rk-yellow hover:bg-rk-gray-dark font-medium transition-all">🏠 Home</a>
+        <a href="#products" id="mob-products" class="mobile-nav-link py-3 px-4 rounded-lg text-gray-300 hover:text-rk-yellow hover:bg-rk-gray-dark font-medium transition-all">📱 Products</a>
+        <a href="#about" id="mob-about" class="mobile-nav-link py-3 px-4 rounded-lg text-gray-300 hover:text-rk-yellow hover:bg-rk-gray-dark font-medium transition-all">ℹ️ About</a>
+        <a href="#contact" id="mob-contact" class="mobile-nav-link py-3 px-4 rounded-lg text-gray-300 hover:text-rk-yellow hover:bg-rk-gray-dark font-medium transition-all">📞 Contact</a>
+        <a href="tel:7057521030" id="mob-call" class="mt-2 text-center bg-rk-yellow text-black font-semibold py-3 px-4 rounded-xl hover:bg-rk-yellow-dark transition-all">📞 Call: 7057521030</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="min-h-screen hero-bg flex items-center pt-16 relative overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-rk-yellow/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-rk-yellow/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rk-yellow/3 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Hero text -->
+        <div class="text-center lg:text-left reveal">
+          <div class="inline-flex items-center gap-2 bg-rk-yellow/10 border border-rk-yellow/30 text-rk-yellow text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <span class="w-2 h-2 bg-rk-yellow rounded-full animate-pulse"></span>
+            New Arrivals Available Now
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+            Best Mobile<br />
+            <span class="gradient-text">Deals 🔥</span>
+          </h1>
+
+          <p class="text-gray-400 text-xl sm:text-2xl mb-4 font-light">
+            Latest Smartphones at <span class="text-rk-yellow font-semibold">Best Price</span>
+          </p>
+          <p class="text-gray-500 text-base mb-10 max-w-lg mx-auto lg:mx-0">
+            Explore top brands like iPhone, Samsung, Redmi & more — all under one roof with unbeatable deals and trusted service.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#products" id="hero-shop-btn" class="bg-rk-yellow text-black font-bold text-lg px-8 py-4 rounded-2xl hover:bg-rk-yellow-dark transition-all duration-300 glow-yellow transform hover:scale-105">
+              🛒 Shop Now
+            </a>
+            <a href="#contact" id="hero-contact-btn" class="border-2 border-rk-yellow text-rk-yellow font-bold text-lg px-8 py-4 rounded-2xl hover:bg-rk-yellow hover:text-black transition-all duration-300 transform hover:scale-105">
+              📞 Contact Us
+            </a>
+          </div>
+
+          <!-- Stats bar -->
+          <div class="flex gap-8 mt-12 justify-center lg:justify-start">
+            <div class="text-center">
+              <p class="text-2xl font-bold text-rk-yellow">500+</p>
+              <p class="text-gray-500 text-xs font-medium">Happy Customers</p>
+            </div>
+            <div class="w-px bg-rk-gray-light"></div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-rk-yellow">6+</p>
+              <p class="text-gray-500 text-xs font-medium">Top Brands</p>
+            </div>
+            <div class="w-px bg-rk-gray-light"></div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-rk-yellow">100%</p>
+              <p class="text-gray-500 text-xs font-medium">Trusted Service</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="flex justify-center items-center reveal">
+          <div class="relative">
+            <div class="absolute inset-0 bg-rk-yellow/20 rounded-full blur-3xl scale-75"></div>
+            <img
+              src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=80"
+              alt="Latest Smartphones"
+              id="hero-phone-img"
+              class="hero-phone relative z-10 w-64 sm:w-80 lg:w-96 rounded-3xl"
+              loading="eager"
+              onerror="this.src='https://via.placeholder.com/400x500/1A1A1A/FACC15?text=📱+RK+Mobile'"
+            />
+            <!-- Floating badges -->
+            <div class="absolute -top-4 -right-4 bg-rk-yellow text-black font-bold text-xs px-3 py-2 rounded-xl shadow-lg animate-bounce">
+              🔥 Hot Deal!
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-rk-gray-dark border border-rk-yellow/40 text-white text-xs px-3 py-2 rounded-xl shadow-lg">
+              ✅ Trusted Shop
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-600 animate-bounce">
+      <span class="text-xs">Scroll</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS SECTION ========== -->
+  <section id="products" class="py-24 bg-rk-black-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16 reveal">
+        <span class="text-rk-yellow font-semibold text-sm uppercase tracking-widest">Our Collection</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-white mt-2 section-heading">Featured Phones</h2>
+        <p class="text-gray-400 mt-6 max-w-xl mx-auto text-base">Handpicked top smartphones from the world's leading brands — quality guaranteed, prices unbeatable.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- iPhone 15 Pro -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-iphone">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=300&q=80"
+                 alt="iPhone 15 Pro"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+iPhone'" />
+            <span class="absolute top-3 right-3 bg-rk-yellow text-black text-xs font-bold px-3 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/20px-Apple_logo_black.svg.png" alt="Apple" class="w-4 h-4 invert" />
+              <span class="text-rk-yellow text-xs font-semibold uppercase tracking-wide">Apple</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">iPhone 15 Pro</h3>
+            <p class="text-gray-400 text-sm mb-4">A17 Pro chip · 48MP camera · Titanium design · Dynamic Island</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹1,29,999</p>
+                <p class="text-gray-600 text-xs line-through">₹1,49,900</p>
+              </div>
+              <button id="buy-iphone" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung S24 Ultra -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-samsung">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1707767994519-f6c6ae13e8e4?w=300&q=80"
+                 alt="Samsung Galaxy S24 Ultra"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+Samsung'" />
+            <span class="absolute top-3 right-3 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">Hot</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-blue-400 text-xs font-semibold uppercase tracking-wide">Samsung</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Galaxy S24 Ultra</h3>
+            <p class="text-gray-400 text-sm mb-4">Snapdragon 8 Gen 3 · 200MP · S-Pen · 12GB RAM</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹1,24,999</p>
+                <p class="text-gray-600 text-xs line-through">₹1,44,999</p>
+              </div>
+              <button id="buy-samsung" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redmi Note 13 Pro+ -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-redmi">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=300&q=80"
+                 alt="Redmi Note 13 Pro+"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+Redmi'" />
+            <span class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">Best Value</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-orange-400 text-xs font-semibold uppercase tracking-wide">Redmi</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Redmi Note 13 Pro+</h3>
+            <p class="text-gray-400 text-sm mb-4">Dimensity 7200-Ultra · 200MP · 120W charging · 5G</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹29,999</p>
+                <p class="text-gray-600 text-xs line-through">₹34,999</p>
+              </div>
+              <button id="buy-redmi" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vivo V30 Pro -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-vivo">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=300&q=80"
+                 alt="Vivo V30 Pro"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+Vivo'" />
+            <span class="absolute top-3 right-3 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">Trending</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-purple-400 text-xs font-semibold uppercase tracking-wide">Vivo</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Vivo V30 Pro</h3>
+            <p class="text-gray-400 text-sm mb-4">Snapdragon 7 Gen 3 · Aura Light · 50MP Zeiss · AMOLED</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹39,999</p>
+                <p class="text-gray-600 text-xs line-through">₹45,999</p>
+              </div>
+              <button id="buy-vivo" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realme GT 6 -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-realme">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=300&q=80"
+                 alt="Realme GT 6"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+Realme'" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Super Fast</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-green-400 text-xs font-semibold uppercase tracking-wide">Realme</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Realme GT 6</h3>
+            <p class="text-gray-400 text-sm mb-4">Snapdragon 8s Gen 3 · 120W SUPERVOOC · 5500mAh</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹34,999</p>
+                <p class="text-gray-600 text-xs line-through">₹39,999</p>
+              </div>
+              <button id="buy-realme" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OnePlus 12 -->
+        <div class="product-card bg-rk-gray-dark border border-rk-gray-light rounded-3xl overflow-hidden reveal" id="product-oneplus">
+          <div class="relative bg-gradient-to-br from-rk-gray-mid to-rk-gray-dark p-8 flex justify-center items-center h-52">
+            <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300&q=80"
+                 alt="OnePlus 12"
+                 class="h-40 object-contain drop-shadow-2xl"
+                 onerror="this.src='https://via.placeholder.com/200x200/1A1A1A/FACC15?text=📱+OnePlus'" />
+            <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Flagship</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-red-400 text-xs font-semibold uppercase tracking-wide">OnePlus</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">OnePlus 12</h3>
+            <p class="text-gray-400 text-sm mb-4">Snapdragon 8 Gen 3 · Hasselblad · 100W SUPERVOOC</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-rk-yellow font-black text-xl">₹64,999</p>
+                <p class="text-gray-600 text-xs line-through">₹74,999</p>
+              </div>
+              <button id="buy-oneplus" class="bg-rk-yellow text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 transform hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="#contact" id="view-more-btn" class="inline-flex items-center gap-2 border-2 border-rk-yellow text-rk-yellow font-semibold px-8 py-3 rounded-2xl hover:bg-rk-yellow hover:text-black transition-all duration-300">
+          View All Products →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="py-24 bg-rk-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text -->
+        <div class="reveal">
+          <span class="text-rk-yellow font-semibold text-sm uppercase tracking-widest">Who We Are</span>
+          <h2 class="text-4xl sm:text-5xl font-black text-white mt-2 mb-6 leading-tight">
+            Your Trusted<br /><span class="gradient-text">Mobile Partner</span>
+          </h2>
+          <p class="text-gray-400 text-base leading-relaxed mb-5">
+            Welcome to <span class="text-rk-yellow font-semibold">RK Mobile</span> — Paratwada's most trusted mobile shop since years. We are committed to offering the latest smartphones from the world's top brands at the most competitive prices in the market.
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed mb-5">
+            Our expert team ensures every customer receives personalized guidance to find the perfect device that fits their needs and budget. From budget picks to flagship devices, we have it all — genuinely sourced, fully warranted.
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed mb-8">
+            At RK Mobile, we believe great service doesn't stop at the sale. Our after-sales support and repair services ensure your device keeps running at its best. <span class="text-white font-medium">Trust, transparency, and quality</span> — that's the RK Mobile promise.
+          </p>
+          <a href="#contact" id="about-contact-btn" class="inline-flex items-center gap-2 bg-rk-yellow text-black font-bold px-7 py-3 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 glow-yellow">
+            Get In Touch →
+          </a>
+        </div>
+
+        <!-- Features grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal">
+
+          <div class="feature-card bg-rk-gray-dark border border-rk-gray-light p-6 rounded-2xl">
+            <div class="text-3xl mb-3">💰</div>
+            <h4 class="font-bold text-white text-lg mb-2">Best Prices</h4>
+            <p class="text-gray-400 text-sm">We offer market-leading prices with no hidden costs. Best deals guaranteed.</p>
+          </div>
+
+          <div class="feature-card bg-rk-gray-dark border border-rk-gray-light p-6 rounded-2xl">
+            <div class="text-3xl mb-3">🔒</div>
+            <h4 class="font-bold text-white text-lg mb-2">100% Genuine</h4>
+            <p class="text-gray-400 text-sm">All products are authentic and come with original manufacturer warranty.</p>
+          </div>
+
+          <div class="feature-card bg-rk-gray-dark border border-rk-gray-light p-6 rounded-2xl">
+            <div class="text-3xl mb-3">⚡</div>
+            <h4 class="font-bold text-white text-lg mb-2">Quick Service</h4>
+            <p class="text-gray-400 text-sm">Fast, efficient service for both sales and repairs. No long waiting times.</p>
+          </div>
+
+          <div class="feature-card bg-rk-gray-dark border border-rk-yellow/30 bg-rk-yellow/5 p-6 rounded-2xl">
+            <div class="text-3xl mb-3">⭐</div>
+            <h4 class="font-bold text-rk-yellow text-lg mb-2">5★ Rated Shop</h4>
+            <p class="text-gray-400 text-sm">Trusted by 500+ happy customers with top-rated service in Paratwada.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="py-24 bg-rk-black-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16 reveal">
+        <span class="text-rk-yellow font-semibold text-sm uppercase tracking-widest">Reach Us</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-white mt-2 section-heading">Contact Us</h2>
+        <p class="text-gray-400 mt-6 max-w-xl mx-auto">Have questions or need help choosing your next phone? We're just a call or message away!</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+
+        <!-- Contact Info -->
+        <div class="reveal">
+          <h3 class="text-2xl font-bold text-white mb-8">Get In Touch</h3>
+
+          <!-- Phone -->
+          <a href="tel:7057521030" id="contact-phone-link" class="flex items-start gap-4 p-5 bg-rk-gray-dark border border-rk-gray-light rounded-2xl mb-4 hover:border-rk-yellow/50 transition-all group">
+            <div class="w-12 h-12 bg-rk-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-rk-yellow group-hover:scale-110 transition-all">
+              <svg class="w-6 h-6 text-rk-yellow group-hover:text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gray-500 text-xs font-medium uppercase tracking-wide mb-1">Phone Number</p>
+              <p class="text-rk-yellow font-bold text-2xl tracking-wide">7057521030</p>
+              <p class="text-gray-500 text-xs mt-1">Click to call now</p>
+            </div>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/917057521030" id="contact-whatsapp-link" target="_blank" rel="noopener" class="flex items-start gap-4 p-5 bg-rk-gray-dark border border-rk-gray-light rounded-2xl mb-4 hover:border-green-500/50 transition-all group">
+            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+              <svg class="w-6 h-6 text-green-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gray-500 text-xs font-medium uppercase tracking-wide mb-1">WhatsApp</p>
+              <p class="text-green-400 font-bold text-lg">Chat on WhatsApp</p>
+              <p class="text-gray-500 text-xs mt-1">Quick response guaranteed</p>
+            </div>
+          </a>
+
+          <!-- Address -->
+          <div class="flex items-start gap-4 p-5 bg-rk-gray-dark border border-rk-gray-light rounded-2xl">
+            <div class="w-12 h-12 bg-rk-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-rk-yellow" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gray-500 text-xs font-medium uppercase tracking-wide mb-1">Our Address</p>
+              <p class="text-white font-semibold text-base leading-relaxed">
+                Near Betul Road, Behind Library<br />
+                In Front Of Police Station<br />
+                <span class="text-rk-yellow">Paratwada – 444805</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Working hours -->
+          <div class="mt-4 p-4 bg-rk-yellow/5 border border-rk-yellow/20 rounded-xl text-sm text-gray-400">
+            🕐 <span class="text-white font-medium">Working Hours:</span> Mon – Sat · 10:00 AM – 8:00 PM
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal">
+          <div class="bg-rk-gray-dark border border-rk-gray-light rounded-3xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-2">Send a Message</h3>
+            <p class="text-gray-500 text-sm mb-7">Fill in the form below and we'll get back to you shortly.</p>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
+              <div class="mb-5">
+                <label for="name-input" class="block text-sm font-semibold text-gray-300 mb-2">Your Name</label>
+                <input
+                  type="text"
+                  id="name-input"
+                  name="name"
+                  placeholder="Enter your full name"
+                  required
+                  class="form-input w-full bg-rk-black border border-rk-gray-light text-white placeholder-gray-600 px-4 py-3 rounded-xl text-sm transition-all duration-200"
+                />
+              </div>
+
+              <div class="mb-5">
+                <label for="mobile-input" class="block text-sm font-semibold text-gray-300 mb-2">Mobile Number</label>
+                <input
+                  type="tel"
+                  id="mobile-input"
+                  name="mobile"
+                  placeholder="Enter your 10-digit mobile number"
+                  maxlength="10"
+                  required
+                  pattern="[0-9]{10}"
+                  class="form-input w-full bg-rk-black border border-rk-gray-light text-white placeholder-gray-600 px-4 py-3 rounded-xl text-sm transition-all duration-200"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label for="message-input" class="block text-sm font-semibold text-gray-300 mb-2">Message <span class="text-gray-600 font-normal">(optional)</span></label>
+                <textarea
+                  id="message-input"
+                  name="message"
+                  rows="3"
+                  placeholder="Which phone are you interested in? Any questions?"
+                  class="form-input w-full bg-rk-black border border-rk-gray-light text-white placeholder-gray-600 px-4 py-3 rounded-xl text-sm transition-all duration-200 resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-rk-yellow text-black font-bold text-base py-4 rounded-xl hover:bg-rk-yellow-dark transition-all duration-200 glow-yellow transform hover:scale-[1.02] flex items-center justify-center gap-2"
+              >
+                <span id="submit-text">📩 Send Message</span>
+              </button>
+
+              <!-- Success message -->
+              <div id="form-success" class="hidden mt-4 p-4 bg-green-500/10 border border-green-500/30 text-green-400 text-sm rounded-xl text-center">
+                ✅ Message sent! We'll contact you within 24 hours.
+              </div>
+              <div id="form-error" class="hidden mt-4 p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+                ❌ Please fill in all required fields correctly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-rk-black border-t border-rk-gray-dark py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <!-- Logo & tagline -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-rk-yellow rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H7V6h10v10z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-black gradient-text text-lg">RK Mobile</p>
+            <p class="text-gray-600 text-xs">Your Trusted Mobile Partner</p>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="flex items-center gap-6 text-sm text-gray-500">
+          <a href="#home" class="hover:text-rk-yellow transition-colors">Home</a>
+          <a href="#products" class="hover:text-rk-yellow transition-colors">Products</a>
+          <a href="#about" class="hover:text-rk-yellow transition-colors">About</a>
+          <a href="#contact" class="hover:text-rk-yellow transition-colors">Contact</a>
+        </div>
+
+        <!-- Social / Call -->
+        <a href="tel:7057521030" class="flex items-center gap-2 bg-rk-yellow/10 border border-rk-yellow/30 text-rk-yellow text-sm font-semibold px-4 py-2 rounded-full hover:bg-rk-yellow hover:text-black transition-all">
+          📞 7057521030
+        </a>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-rk-gray-dark text-center">
+        <p class="text-gray-600 text-sm">© 2026 RK Mobile | All Rights Reserved</p>
+        <p class="text-gray-700 text-xs mt-1">Designed with ❤️ for the people of Paratwada</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+  <a
+    href="https://wa.me/917057521030"
+    id="whatsapp-fab"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp"
+    title="Chat with us on WhatsApp"
+    class="whatsapp-btn fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-400 hover:scale-110 transition-all duration-300"
+  >
+    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button
+    id="scroll-top"
+    aria-label="Scroll to top"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="hidden fixed bottom-6 left-6 z-50 w-12 h-12 bg-rk-yellow text-black rounded-full flex items-center justify-center shadow-lg hover:bg-rk-yellow-dark transition-all duration-200 hover:scale-110"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ---- Mobile Menu Toggle ----
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      iconOpen.classList.toggle('hidden', menuOpen);
+      iconClose.classList.toggle('hidden', !menuOpen);
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // ---- Smooth Scroll for all anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const navHeight = document.getElementById('navbar').offsetHeight;
+          const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ---- Scroll Reveal Animation ----
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ---- Navbar scroll style ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('shadow-2xl');
+      } else {
+        navbar.classList.remove('shadow-2xl');
+      }
+
+      // Show/hide scroll-to-top
+      const scrollTop = document.getElementById('scroll-top');
+      if (window.scrollY > 400) {
+        scrollTop.classList.remove('hidden');
+        scrollTop.classList.add('flex');
+      } else {
+        scrollTop.classList.add('hidden');
+        scrollTop.classList.remove('flex');
+      }
+    });
+
+    // ---- Contact Form Submit ----
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name-input').value.trim();
+      const mobile = document.getElementById('mobile-input').value.trim();
+      const successEl = document.getElementById('form-success');
+      const errorEl = document.getElementById('form-error');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+
+      // Hide both messages
+      successEl.classList.add('hidden');
+      errorEl.classList.add('hidden');
+
+      // Validate
+      if (!name || !mobile || mobile.length !== 10 || !/^\d{10}$/.test(mobile)) {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      // Simulate submission
+      submitBtn.disabled = true;
+      submitText.textContent = '⏳ Sending...';
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitText.textContent = '📩 Send Message';
+        successEl.classList.remove('hidden');
+        document.getElementById('contact-form').reset();
+
+        // Redirect to WhatsApp with message
+        const msg = encodeURIComponent(`Hello RK Mobile! My name is ${name}. My mobile: ${mobile}`);
+        window.open(`https://wa.me/917057521030?text=${msg}`, '_blank');
+      }, 1200);
+    }
+
+    // ---- Buy Now button handler ----
+    document.querySelectorAll('[id^="buy-"]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productName = productCard.querySelector('h3').textContent;
+        const msg = encodeURIComponent(`Hi! I'm interested in buying the ${productName}. Please provide more details.`);
+        window.open(`https://wa.me/917057521030?text=${msg}`, '_blank');
+      });
+    });
+
+    // ---- Initial trigger for elements already in view ----
+    window.addEventListener('load', () => {
+      reveals.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
