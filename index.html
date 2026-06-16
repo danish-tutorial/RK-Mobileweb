@@ -61,7 +61,8 @@
   </script>
 
   <style>
-    * { font-family: 'Poppins', sans-serif; }
+    * { font-family: 'Poppins', sans-serif; box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
 
     /* ── Custom scrollbar ── */
     ::-webkit-scrollbar { width: 6px; }
@@ -256,14 +257,14 @@
   </nav>
 
   <!-- ========== HERO SECTION ========== -->
-  <section id="home" class="min-h-screen hero-bg grid-overlay flex items-center pt-16 relative overflow-hidden">
+  <section id="home" class="min-h-screen hero-bg grid-overlay flex items-center pt-16 relative overflow-x-hidden">
     <!-- Background orbs -->
     <div class="absolute top-20 left-10 w-72 h-72 bg-rk-blue/8 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-20 right-10 w-96 h-96 bg-rk-blue-dark/8 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rk-blue/4 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
 
         <!-- Hero Text -->
         <div class="text-center lg:text-left reveal">
@@ -272,7 +273,7 @@
             Trusted Repair Shop in Paratwada
           </div>
 
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6">
             Mobile Repair &amp;<br />
             <span class="gradient-text">Accessories Experts 🔧</span>
           </h1>
@@ -284,17 +285,17 @@
             From cracked screens to dead batteries — we fix it all quickly and affordably. Premium accessories always in stock.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#services" id="hero-services-btn" class="bg-gradient-to-r from-rk-blue to-rk-blue-dark text-white font-bold text-lg px-8 py-4 rounded-2xl hover:from-rk-blue-dark hover:to-rk-blue-glow transition-all duration-300 glow-blue transform hover:scale-105 shadow-xl">
+          <div class="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            <a href="#services" id="hero-services-btn" class="bg-gradient-to-r from-rk-blue to-rk-blue-dark text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:from-rk-blue-dark hover:to-rk-blue-glow transition-all duration-300 glow-blue transform hover:scale-105 shadow-xl text-center">
               🔧 View Services
             </a>
-            <a href="#contact" id="hero-contact-btn" class="border-2 border-rk-blue text-rk-blue font-bold text-lg px-8 py-4 rounded-2xl hover:bg-rk-blue hover:text-white transition-all duration-300 transform hover:scale-105">
+            <a href="#contact" id="hero-contact-btn" class="border-2 border-rk-blue text-rk-blue font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:bg-rk-blue hover:text-white transition-all duration-300 transform hover:scale-105 text-center">
               📞 Contact Us
             </a>
           </div>
 
           <!-- Stats bar -->
-          <div class="flex gap-8 mt-12 justify-center lg:justify-start">
+          <div class="flex gap-5 sm:gap-8 mt-8 sm:mt-12 justify-center lg:justify-start">
             <div class="text-center">
               <p class="text-2xl font-bold text-rk-blue-light stat-num">500+</p>
               <p class="text-gray-500 text-xs font-medium">Happy Customers</p>
@@ -313,56 +314,57 @@
         </div>
 
         <!-- Hero Visual -->
-        <div class="flex justify-center items-center reveal">
-          <div class="relative">
+        <div class="flex justify-center items-center reveal px-2">
+          <div class="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
             <div class="absolute inset-0 bg-rk-blue/20 rounded-full blur-3xl scale-75"></div>
             <!-- Repair illustration using emoji-rich card -->
-            <div class="relative z-10 w-72 sm:w-80 lg:w-96">
-              <div class="hero-phone bg-gradient-to-br from-rk-navy-light to-rk-navy-mid border border-rk-blue/30 rounded-3xl p-8 shadow-2xl">
+            <div class="relative z-10 w-full">
+              <!-- Floating badges inside card flow to avoid overflow -->
+              <div class="flex justify-between items-center mb-3 px-1">
+                <div class="bg-rk-navy-light border border-rk-blue/40 text-white text-xs px-3 py-1.5 rounded-xl shadow-lg">
+                  ✅ Trusted Shop
+                </div>
+                <div class="bg-gradient-to-r from-rk-blue to-rk-blue-dark text-white font-bold text-xs px-3 py-1.5 rounded-xl shadow-lg animate-bounce">
+                  ⚡ Same Day Repair!
+                </div>
+              </div>
+              <div class="hero-phone bg-gradient-to-br from-rk-navy-light to-rk-navy-mid border border-rk-blue/30 rounded-3xl p-6 sm:p-8 shadow-2xl">
                 <!-- Phone icon at top -->
-                <div class="flex justify-center mb-6">
-                  <div class="w-20 h-20 bg-gradient-to-br from-rk-blue to-rk-blue-dark rounded-2xl flex items-center justify-center shadow-xl">
-                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <div class="flex justify-center mb-5">
+                  <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-rk-blue to-rk-blue-dark rounded-2xl flex items-center justify-center shadow-xl">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H7V6h10v10z"/>
                     </svg>
                   </div>
                 </div>
-                <h3 class="text-white font-bold text-xl text-center mb-4">We Fix Your Phone</h3>
+                <h3 class="text-white font-bold text-lg sm:text-xl text-center mb-4">We Fix Your Phone</h3>
                 <!-- Service mini-list -->
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3 bg-rk-blue/10 rounded-xl px-4 py-2.5">
-                    <span class="text-lg">📱</span>
-                    <span class="text-gray-300 text-sm font-medium">Screen Replacement</span>
-                    <span class="ml-auto text-rk-blue-light text-xs font-semibold">✓ Available</span>
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-center gap-2 sm:gap-3 bg-rk-blue/10 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5">
+                    <span class="text-base sm:text-lg flex-shrink-0">📱</span>
+                    <span class="text-gray-300 text-xs sm:text-sm font-medium">Screen Replacement</span>
+                    <span class="ml-auto text-rk-blue-light text-xs font-semibold flex-shrink-0">✓ Available</span>
                   </div>
-                  <div class="flex items-center gap-3 bg-rk-blue/10 rounded-xl px-4 py-2.5">
-                    <span class="text-lg">🔋</span>
-                    <span class="text-gray-300 text-sm font-medium">Battery Replacement</span>
-                    <span class="ml-auto text-rk-blue-light text-xs font-semibold">✓ Available</span>
+                  <div class="flex items-center gap-2 sm:gap-3 bg-rk-blue/10 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5">
+                    <span class="text-base sm:text-lg flex-shrink-0">🔋</span>
+                    <span class="text-gray-300 text-xs sm:text-sm font-medium">Battery Replacement</span>
+                    <span class="ml-auto text-rk-blue-light text-xs font-semibold flex-shrink-0">✓ Available</span>
                   </div>
-                  <div class="flex items-center gap-3 bg-rk-blue/10 rounded-xl px-4 py-2.5">
-                    <span class="text-lg">💻</span>
-                    <span class="text-gray-300 text-sm font-medium">Software Repair</span>
-                    <span class="ml-auto text-rk-blue-light text-xs font-semibold">✓ Available</span>
+                  <div class="flex items-center gap-2 sm:gap-3 bg-rk-blue/10 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5">
+                    <span class="text-base sm:text-lg flex-shrink-0">💻</span>
+                    <span class="text-gray-300 text-xs sm:text-sm font-medium">Software Repair</span>
+                    <span class="ml-auto text-rk-blue-light text-xs font-semibold flex-shrink-0">✓ Available</span>
                   </div>
-                  <div class="flex items-center gap-3 bg-rk-blue/10 rounded-xl px-4 py-2.5">
-                    <span class="text-lg">🔌</span>
-                    <span class="text-gray-300 text-sm font-medium">Charging Port Repair</span>
-                    <span class="ml-auto text-rk-blue-light text-xs font-semibold">✓ Available</span>
+                  <div class="flex items-center gap-2 sm:gap-3 bg-rk-blue/10 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5">
+                    <span class="text-base sm:text-lg flex-shrink-0">🔌</span>
+                    <span class="text-gray-300 text-xs sm:text-sm font-medium">Charging Port Repair</span>
+                    <span class="ml-auto text-rk-blue-light text-xs font-semibold flex-shrink-0">✓ Available</span>
                   </div>
                 </div>
-                <div class="mt-5 text-center">
+                <div class="mt-4 sm:mt-5 text-center">
                   <span class="text-rk-blue-light text-xs font-semibold bg-rk-blue/10 px-3 py-1 rounded-full">⚡ Fast · Affordable · Trusted</span>
                 </div>
               </div>
-            </div>
-
-            <!-- Floating badges -->
-            <div class="absolute -top-4 -right-4 bg-gradient-to-r from-rk-blue to-rk-blue-dark text-white font-bold text-xs px-3 py-2 rounded-xl shadow-lg animate-bounce">
-              ⚡ Same Day Repair!
-            </div>
-            <div class="absolute -bottom-4 -left-4 bg-rk-navy-light border border-rk-blue/40 text-white text-xs px-3 py-2 rounded-xl shadow-lg">
-              ✅ Trusted Shop
             </div>
           </div>
         </div>
